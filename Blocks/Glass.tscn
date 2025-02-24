@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmt7s1chgm4nb"]
+
+[ext_resource type="Material" uid="uid://chyhkqvhfgeh7" path="res://Assets/glass_material.tres" id="1_jvhyh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t1lxv"]
+material = ExtResource("1_jvhyh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u68x2"]
+
+[node name="Glass" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_t1lxv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_u68x2")

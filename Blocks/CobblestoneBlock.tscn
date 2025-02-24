@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct7arswjbnhuv"]
+
+[ext_resource type="Texture2D" uid="uid://5xjf8djc34t" path="res://Assets/cobblestone.png" id="1_jtkjw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3av3"]
+albedo_texture = ExtResource("1_jtkjw")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_knoj5"]
+material = SubResource("StandardMaterial3D_d3av3")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_plc88"]
+
+[node name="Cobblestone" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_knoj5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_plc88")
